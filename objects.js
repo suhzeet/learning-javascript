@@ -15,14 +15,18 @@ const jsUser = {
 // console.log(typeof jsUser.mySym);
 
 jsUser.greeting = function() {
-    console.log("hello js user");
+    // console.log("hello js user");
 }
 
 jsUser.greetingTwo = function() {
-    console.log(`hello js user, ${this.name}`);
+    // console.log(`hello js user, ${this.name}`);
 }
 
 // console.log(jsUser.greeting())
 // console.log(jsUser.greetingTwo())
-jsUser.greeting()
-jsUser.greetingTwo()
+// jsUser.greeting()
+// jsUser.greetingTwo()
+
+const tinderUser = {}
+
+tinderUser.id = 
