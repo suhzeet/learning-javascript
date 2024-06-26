@@ -15,7 +15,6 @@ let myCreatedDate = new Date("01-03-2023");
 
 // console.log(myTimeStamp, myCreatedDate.getTime())
 
-
-let newDate = new Date()
+let newDate = new Date();
 console.log(newDate);
-console.log(newDate.getDay()); 
+console.log(newDate.getDay());

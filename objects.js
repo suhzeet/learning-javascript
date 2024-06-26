@@ -28,3 +28,27 @@ jsUser.greetingTwo = function () {
 // jsUser.greetingTwo()
 
 const tinderUser = {};
+
+const regularUser = {
+  email: "example@gmail.com",
+  fullName: {
+    firstName: "Sujit",
+    lastName: "Neupane",
+  },
+};
+
+// console.log(regularUser.fullName.firstName);
+
+// ..............
+// objects de-structuring
+
+const course = {
+  courseName: "js in hindi",
+  price: "999",
+  courseInstructor: "sujit",
+};
+
+// console.log(course.courseInstructor);
+
+const { courseInstructor: instructor } = course;
+// console.log(instructor);

@@ -11,13 +11,13 @@ const balance = new Number(100);
 const otherNumber = 23.53;
 // console.log(otherNumber.toPrecision(3));
 
-const hundreds = 100000
+const hundreds = 100000;
 // console.log(hundreds.toLocaleString('en-IN'));
 
-// 
+//
 // MATHS
 
 // console.log(Math);
 // console.log(Math.abs(-4));
 // console.log(Math.round(4.6));
-console.log(Math.random()*10 + 1);
+console.log(Math.random() * 10 + 1);
