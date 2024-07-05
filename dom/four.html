@@ -10,4 +10,43 @@
       <li>JavaScript</li>
     </ul>
   </body>
+  <script>
+    function addLanguage(langName) {
+      const newLi = document.createElement("li");
+      newLi.innerText = `${langName}`;
+      document.querySelector(".language").appendChild(newLi);
+    }
+    addLanguage("Python");
+    addLanguage("C++");
+
+    // in a optimized way
+    function addOpLanguage(langName) {
+      const li = document.createElement("li");
+      li.appendChild(document.createTextNode(langName));
+      document.querySelector(".language").appendChild(li);
+    }
+    addOpLanguage("Ruby");
+
+    // .......EDIT......
+    // second child
+    const secondLang = document.querySelector("li:nth-child(2)");
+
+    // .. not optimized
+    // secondLang.innerText = "hello";
+
+    // ..optimized
+    const newLi = document.createElement("li");
+    newLi.textContent = "Mojo";
+    secondLang.replaceWith(newLi);
+
+    // first child
+    const firstChild = document.querySelector("li:first-child");
+    const nayaLi = document.createElement("li");
+    nayaLi.textContent = "TypeScript";
+    firstChild.replaceWith(nayaLi);
+
+    // ......REMOVE.......
+    const lastLang = document.querySelector("li:last-child");
+    lastLang.remove();
+  </script>
 </html>
