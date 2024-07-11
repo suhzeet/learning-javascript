@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Sujit Neupane</h1>
+    <button id="stop">Stop</button>
+  </body>
+  <script>
+    const hello = () => {
+      console.log("hello gaich k xa");
+    };
+    let heading = document.querySelector("h1");
+    console.log(heading.innerHTML);
+
+    setTimeout(hello, 2000);
+    const changeHead = setTimeout(() => {
+      heading.innerHTML = `Sujeet Neupane`;
+    }, 2000);
+
+    document.querySelector("#stop").addEventListener("click", (e) => {
+      clearTimeout(changeHead);
+      console.log("STOPPED change in heading");
+    });
+  </script>
+</html>
