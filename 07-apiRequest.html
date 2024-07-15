@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>API Request</title>
+  </head>
+  <body style="background-color: #212121; color: white">
+    <h1>API Request</h1>
+    <button id="details">Press</button>
+    <button id="random">Click</button>
+  </body>
+  <script>
+    const reqUrl = "https://api.github.com/users/hiteshchoudhary";
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", reqUrl);
+    xhr.onreadystatechange = function () {
+      console.log(xhr.readyState);
+      if (xhr.readyState === 4) {
+        const data = JSON.parse(this.responseText);
+        console.log(data.name, data.followers, data.avatar_url);
+
+        document.querySelector("#random").addEventListener("click", (e) => {
+          e.preventDefault();
+          const div = document.querySelector("#random");
+
+          div.innerHTML = "";
+          const image = document.createElement("img");
+          image.src = data.avatar_url;
+          image.height = 100;
+          image.width = 100;
+          div.appendChild(image);
+
+          const name = document.createElement("h3");
+          name.innerHTML = data.name;
+          div.appendChild(name);
+
+          const follower = document.createElement("p");
+          follower.innerHTML = `Followers: <b>${data.followers}</b>`;
+          div.appendChild(follower);
+
+          div.style.border = "3px solid white";
+          div.style.margin = "0px auto";
+          div.style.borderRadius = "8px";
+        });
+      }
+    };
+    xhr.send();
+  </script>
+</html>
