@@ -8,7 +8,6 @@
   <body style="background-color: #212121; color: white">
     <h1>API Request</h1>
     <button id="details">Press</button>
-    <button id="random">Click</button>
   </body>
   <script>
     const reqUrl = "https://api.github.com/users/hiteshchoudhary";
@@ -20,9 +19,9 @@
         const data = JSON.parse(this.responseText);
         console.log(data.name, data.followers, data.avatar_url);
 
-        document.querySelector("#random").addEventListener("click", (e) => {
+        document.querySelector("#details").addEventListener("click", (e) => {
           e.preventDefault();
-          const div = document.querySelector("#random");
+          const div = document.querySelector("#details");
 
           div.innerHTML = "";
           const image = document.createElement("img");
